@@ -9,12 +9,11 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
-# gem "github-pages", group: :jekyll_plugins
-
 # To upgrade, run `bundle update`.
 
-gem "github-pages", "170", group: :jekyll_plugins
-gem "jekyll-remote-theme"
+# gem "github-pages", "170", group: :jekyll_plugins
+gem "github-pages", group: :jekyll_plugins
+# gem "jekyll"
 # gem "minimal-mistakes-jekyll"
 
 # The following plugins are automatically loaded by the theme-gem:
