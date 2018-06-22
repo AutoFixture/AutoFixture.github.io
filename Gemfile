@@ -11,7 +11,6 @@ source "https://rubygems.org"
 
 # To upgrade, run `bundle update`.
 
-# gem "github-pages", "170", group: :jekyll_plugins
 gem "github-pages", group: :jekyll_plugins
 # gem "jekyll"
 # gem "minimal-mistakes-jekyll"
