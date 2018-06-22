@@ -1,0 +1,11 @@
+main:
+    - title: "Documentation"
+      url: /docs/quick-start/
+    - title: "GitHub"
+      url: https://github.com/AutoFixture/AutoFixture/
+    - title: "NuGet"
+      url: https://www.nuget.org/packages/AutoFixture/
+
+docs:
+    - title: "Quick-Start Guide"
+      url: /docs/quick-start/
