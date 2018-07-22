@@ -50,5 +50,4 @@ public void IntroductoryTest(int expectedNumber, INumberSource numberSource, MyC
     
     Assert.Equal(expectedNumber, result);
 }
-
 ```
