@@ -1,9 +1,9 @@
 main:
-    - title: "Documentation"
+    - title: '<i class="fas fa-book"></i> Documentation'
       url: /docs/quick-start/
-    - title: "GitHub"
+    - title: '<i class="fab fa-github"></i> GitHub'
       url: https://github.com/AutoFixture/AutoFixture/
-    - title: "NuGet"
+    - title: '<i class="fas fa-box-open"></i> NuGet'
       url: https://www.nuget.org/packages/AutoFixture/
 
 docs:
