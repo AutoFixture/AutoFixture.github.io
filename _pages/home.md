@@ -7,7 +7,7 @@ permalink: /
 ⚠️⚠️⚠️ **Notice!** Site is under active development and is not fully ready yet 🔨👷
 
 -----------
-# Intro
+# Overview
 
 AutoFixture is a tool designed to make Test-Driven Development more productive and unit tests more refactoring-safe. It does so by removing the need for hand-coding anonymous variables as part of a test's Arrange phase:
 
