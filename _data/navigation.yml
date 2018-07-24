@@ -13,6 +13,11 @@ docs:
       children:
           - title: "Creation"
             url: /docs/fixture-creation/
-          - title: "Customization"
-            url: /docs/fixture-customization/
-
+    - title: "Fixture customization"
+      children:
+          - title: "Overview"
+            url: /docs/fixture-customization-overview/
+          - title: "Raw customization with Register<T>()"
+            url: /docs/fixture-customization-register/
+          - title: "Freeze<T>() and Inject<T>()"
+            url: /docs/fixture-customization-freeze-and-inject/
