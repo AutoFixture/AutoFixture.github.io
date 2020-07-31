@@ -1,47 +1,47 @@
 main:
-    - title: '<i class="fas fa-book"></i> Documentation'
-      url: /docs/quick-start/
-    - title: '<i class="fab fa-github"></i> GitHub'
-      url: https://github.com/AutoFixture/AutoFixture/
-    - title: '<i class="fas fa-box-open"></i> NuGet'
-      url: https://www.nuget.org/profiles/AutoFixture/
+  - title: '<i class="fas fa-book"></i> Documentation'
+    url: /docs/quick-start/
+  - title: '<i class="fab fa-github"></i> GitHub'
+    url: https://github.com/AutoFixture/AutoFixture/
+  - title: '<i class="fas fa-box-open"></i> NuGet'
+    url: https://www.nuget.org/profiles/AutoFixture/
 
 docs:
-    - title: "Quick-Start Guide"
-      url: /docs/quick-start/
-    - title: "Fixture core"
-      children:
-          - title: "Creation"
-            url: /docs/fixture-creation/
-    - title: "Fixture customization"
-      children:
-          - title: "Overview"
-            url: /docs/fixture-customization-overview/
-          - title: "Register<T>()"
-            url: /docs/fixture-customization-register/
-          - title: "Freeze<T>() and Inject<T>()"
-            url: /docs/fixture-customization-freeze-and-inject/
-          - title: "Customize<T>() and Build<T>()"
-            url: /docs/fixture-customization-customize-and-build-dsl/
-          - title: "Advanced scenarios"
-            url: /docs/fixture-customization-advanced-scenarios/
-          - title: "Code own customization"
-            url: /docs/fixture-customization-code-own-customization/
-    - title: "Testing frameworks integration"
-      children:
-          - title: "Overview"
-            url: /docs/fixture-integration-testing-overview/
-          - title: "Customization"
-            url: /docs/fixture-integration-testing-customization/
-          - title: "Framework specifics"
-            url: /docs/fixture-integration-testing-specifics/
-    - title: "Mocking frameworks integration"
-      children:
-          - title: "Overview"
-            url: /docs/fixture-integration-mocking-overview/
-          - title: "Framework specifics"
-            url: /docs/fixture-integration-mocking-specifics/
-    - title: "Samples"
-      children:
-          - title: "Mocking and testing integrations together"
-            url: /docs/fixture-samples-mocking-and-testing-integration/
+  - title: "Quick-Start Guide"
+    url: /docs/quick-start/
+  - title: "Fixture core"
+    children:
+      - title: "Creation"
+        url: /docs/fixture-creation/
+  - title: "Fixture customization"
+    children:
+      - title: "Overview"
+        url: /docs/fixture-customization-overview/
+      - title: "Register<T>()"
+        url: /docs/fixture-customization-register/
+      - title: "Freeze<T>() and Inject<T>()"
+        url: /docs/fixture-customization-freeze-and-inject/
+      - title: "Customize<T>() and Build<T>()"
+        url: /docs/fixture-customization-customize-and-build-dsl/
+      - title: "Advanced scenarios"
+        url: /docs/fixture-customization-advanced-scenarios/
+      - title: "Code own customization"
+        url: /docs/fixture-customization-code-own-customization/
+  - title: "Testing frameworks integration"
+    children:
+      - title: "Overview"
+        url: /docs/fixture-integration-testing-overview/
+      - title: "Customization"
+        url: /docs/fixture-integration-testing-customization/
+      - title: "Framework specifics"
+        url: /docs/fixture-integration-testing-specifics/
+  - title: "Mocking frameworks integration"
+    children:
+      - title: "Overview"
+        url: /docs/fixture-integration-mocking-overview/
+      - title: "Framework specifics"
+        url: /docs/fixture-integration-mocking-specifics/
+  - title: "Samples"
+    children:
+      - title: "Mocking and testing integrations together"
+        url: /docs/fixture-samples-mocking-and-testing-integration/

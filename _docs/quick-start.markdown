@@ -1,8 +1,9 @@
 ---
 layout: single
-title:  "Welcome to AutoFixture documentation site"
+title: "Welcome to AutoFixture documentation site"
 classes: wide
 ---
+
 This is intro doc.
 
 And here is the basic usage example:

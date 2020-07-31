@@ -1,11 +1,11 @@
 ---
 layout: single
-title:  '<i class="fas fa-wrench"></i> <i class="fas fa-pencil-ruler"></i> Advanced customization'
+title: '<i class="fas fa-wrench"></i> <i class="fas fa-pencil-ruler"></i> Advanced customization'
 classes: wide
 ---
 
-# `ICustomization` interface
+## `ICustomization` interface
 
-# Existing customizations
+## Existing customizations
 
-# Building blocks
+## Building blocks

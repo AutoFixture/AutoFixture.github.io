@@ -1,13 +1,13 @@
 ---
 layout: single
-title:  '<i class="fas fa-wrench"></i> <i class="fas fa-pencil-ruler"></i> Mocking frameworks integration - Overview'
+title: '<i class="fas fa-wrench"></i> <i class="fas fa-pencil-ruler"></i> Mocking frameworks integration - Overview'
 classes: wide
 ---
 
-# Overview
+## Overview
 
-# Customizations
+## Customizations
 
-# Auto-configured mode
+## Auto-configured mode
 
-# Delegates mocking
+## Delegates mocking
