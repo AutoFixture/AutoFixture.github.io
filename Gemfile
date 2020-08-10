@@ -11,6 +11,8 @@ source "https://rubygems.org"
 
 # To upgrade, run `bundle update`.
 
+gem "kramdown", ">= 2.3.0"
+
 gem "github-pages", group: :jekyll_plugins
 
 # If you have any other plugins, put them here!
