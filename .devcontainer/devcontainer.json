@@ -14,7 +14,8 @@
     "bierner.github-markdown-preview",
     "yzhang.markdown-all-in-one",
     "mhutchie.git-graph",
-    "eamodio.gitlens"
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker"
   ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [4000],
