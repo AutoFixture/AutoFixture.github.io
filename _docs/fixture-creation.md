@@ -41,7 +41,7 @@ AutoFixture uses different strategies for different types. The primitive and pop
 
 - Look for a public constructor or a static factory method (static method returning an instance of the current type).
 - Resolve the constructor arguments and activate instance.
-- Fill the writable public properties and fields (enabled by default; might be disabed via `fixture.OmitAutoProperties = true`) with generated values.
+- Fill the writable public properties and fields (enabled by default; might be disabled via `fixture.OmitAutoProperties = true`) with generated values.
 
 See example:
 
