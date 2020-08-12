@@ -1,6 +1,6 @@
 ---
-title: 'Welcome'
 layout: splash
+title: "Home"
 permalink: /
 ---
 
@@ -54,3 +54,12 @@ public void IntroductoryTest(int expectedNumber, INumberSource numberSource, MyC
     Assert.Equal(expectedNumber, result);
 }
 ```
+
+
+## Integration Libraries
+
+Additionally we provides a wide selection of integration libraries, that will help you take the most of AutoFixture, by integrating it with your unit-testing and mocking frameworks.
+
+Currently we support most popular unit-testing and mocking frameworks in the .NET ecosystem (e.g. **xUnit**, **NUnit**, **Moq**, **NSubstitute** and more).
+
+## Idiomatic assertions
