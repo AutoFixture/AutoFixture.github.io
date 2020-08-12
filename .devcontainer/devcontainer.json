@@ -9,13 +9,15 @@
   },
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": [
+    "editorconfig.editorconfig",
     "davidanson.vscode-markdownlint",
-    "editorconfig.editorconfig"
+    "bierner.github-markdown-preview",
+    "yzhang.markdown-all-in-one",
+    "mhutchie.git-graph",
+    "eamodio.gitlens"
   ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [
-    4000
-  ],
+  "forwardPorts": [4000],
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "bundle install",
   // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
