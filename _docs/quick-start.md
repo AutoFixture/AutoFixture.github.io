@@ -22,6 +22,15 @@ Here are some examples on how you can install the AutoFixture NuGet package.
 PM> Install-Package AutoFixture -Version 4.13.0
 ```
 
+### Project File
+
+```xml
+<ItemGroup>
+  <!--Other package references-->
+  <PackageReference Include="AutoFixture" Version="4.11.0" />
+</ItemGroup>
+```
+
 ## Using AutoFixture
 
 Now that the package is installed in your project, let's see how AutoFixture can help you write easier to understand and maintain unit-tests.
