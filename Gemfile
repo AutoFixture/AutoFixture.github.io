@@ -12,6 +12,7 @@ source "https://rubygems.org"
 # To upgrade, run `bundle update`.
 
 gem "kramdown", ">= 2.3.0"
+gem "nokogiri", ">= 1.11.1"
 
 gem "github-pages", group: :jekyll_plugins
 
