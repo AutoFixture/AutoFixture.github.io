@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Specimen creation"
+title: "Anonymous variables"
 classes: wide
 ---
 
@@ -119,4 +119,4 @@ Usually AutoFixture tries to return the most expected value you might want to ge
 - empty strings
 - throw exception in the generated delegates or tasks
 
-As result the deeply initialized graph usually suits for the most scenarios. For the cases when it doesn't please use the customization feature described in the further sections.
+As result the deeply initialized graph usually suits for the most scenarios. For the cases when it doesn't, please use the customization feature described in the further sections.

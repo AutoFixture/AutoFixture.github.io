@@ -18,10 +18,10 @@ There are a couple of ways to setup the local development environment:
 > :warning: There is currently an ongoing effort to document AutoFixture.
 > Any contributions to the documentation are welcome.
 
-- [ ] Overview
-- [ ] Quick Start guide
-- [ ] Fixture creation
-- [ ] Fixture customization
+- [x] Overview
+- [x] Quick Start guide
+- [x] Fixture creation
+- [x] Fixture customization
   - [ ] Customize
   - [ ] Build
 - [ ] Freeze and Inject features
