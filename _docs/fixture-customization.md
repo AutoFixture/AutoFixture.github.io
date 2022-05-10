@@ -40,7 +40,7 @@ In the example above, the `Fixture` instance is customized by the client code us
 
 ## Reusing customizations
 
-By design customizations are intended to be small in scope, reusable and composable. Whenever implementing a custom customization, it is recommended to adhere to the DRY principle and avoid defining all the configuration inside a single customizatino instance.
+By design customizations are intended to be small in scope, reusable and composable. Whenever implementing a custom customization, it is recommended to adhere to the DRY principle and avoid defining all the configuration inside a single customization instance.
 
 To be able to use multiple atomic customizations it is recommended to use the composite pattern. For convenience AutoFixture offers the `CompositeCustomization` class that implements the composite pattern for the `ICustomization` interface.
 
