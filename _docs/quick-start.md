@@ -55,13 +55,13 @@ public void IntroductoryTest()
     var repositoryMock = new Mock<IRepository>();
     var loggerMock = new Mock<ILogger>();
     var sut = new MyService(
-      mailComposer.Object,
+      mailComposerMock.Object,
       repositoryMock.Object,
       loggerMock.Object
     );
 
     // Act
-    var result = sut.SendEmail(ClientDto);
+    var result = sut.SendEmail(someDto);
 
     // Assert
     Assert.Equal(expectedNumber, result);
@@ -131,7 +131,7 @@ public void IntroductoryTest()
   var sut = fixture.Create<MyService>();
 
   // Act
-  var result = sut.SendEmail(ClientDto);
+  var result = sut.SendEmail(someDto);
 
   // Assert
   Assert.Equal(expectedNumber, result);
