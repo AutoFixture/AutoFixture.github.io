@@ -1,6 +1,6 @@
 # AutoFixture Documentation
 
-This is the official AutoFixture documentation repository. You can find the deployed versoin of the documentation at [AutoFixture.github.io](https://autofixture.github.io).
+This is the official AutoFixture documentation repository. You can find the deployed version of the documentation at [AutoFixture.github.io](https://autofixture.github.io).
 
 ## Contributing
 

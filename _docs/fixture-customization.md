@@ -58,7 +58,7 @@ Composite customizations can also be implemented by inheriting from `CompositeCu
 ```csharp
 class DomainCustomization : CompositeCustomization
 {
-  public DoaminCustomization()
+  public DomainCustomization()
     : base(
         new CustomersCustomization(),
         new AddressCustomization())
