@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - master
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Build documentation site
+        uses: ./.github/actions/build-site

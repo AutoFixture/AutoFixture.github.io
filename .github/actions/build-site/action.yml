@@ -1,0 +1,68 @@
+name: Build documentation site
+description: Generate API markdown with DocFX, then statically generate the Nuxt site
+
+inputs:
+  node-version:
+    description: Node.js version
+    required: false
+    default: '22'
+  dotnet-version:
+    description: .NET SDK version
+    required: false
+    default: '8.0.x'
+
+runs:
+  using: composite
+  steps:
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v6
+      with:
+        dotnet-version: ${{ inputs.dotnet-version }}
+
+    - name: Install DocFX
+      shell: bash
+      run: |
+        dotnet tool install -g docfx
+        echo "$HOME/.dotnet/tools" >> "$GITHUB_PATH"
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v7
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: npm
+        cache-dependency-path: site/package-lock.json
+
+    - name: Cache NuGet packages for API generation
+      uses: actions/cache@v6
+      with:
+        path: api-gen/packages-cache
+        key: api-nuget-${{ hashFiles('api-gen/packages.json') }}
+        restore-keys: |
+          api-nuget-
+
+    - name: Generate API markdown
+      shell: bash
+      run: node api-gen/run.mjs prepare
+
+    - name: Install site dependencies
+      shell: bash
+      run: npm ci
+      working-directory: site
+
+    - name: Generate static site
+      shell: bash
+      run: npm run generate
+      working-directory: site
+
+    - name: Ensure CNAME in site output
+      shell: bash
+      run: |
+        mkdir -p site/.output/public
+        if [ -f site/public/CNAME ]; then
+          cp site/public/CNAME site/.output/public/CNAME
+        elif [ -f CNAME ]; then
+          cp CNAME site/.output/public/CNAME
+        else
+          echo "Missing CNAME for GitHub Pages custom domain" >&2
+          exit 1
+        fi

@@ -1,44 +1,31 @@
-# AutoFixture Documentation
+# AutoFixture documentation
 
-This is the official AutoFixture documentation repository. You can find the deployed version of the documentation at [AutoFixture.github.io](https://autofixture.github.io).
+Nuxt Content site for guides + DocFX-generated API reference rendered outside Nuxt Content.
 
-## Contributing
+| Folder | Purpose |
+|--------|---------|
+| `api-gen/` | DocFX metadata → markdown and search/nav artifacts |
+| `site/` | Nuxt app (docs in Content; API from static markdown + server render) |
 
-### Environment Setup
+## Generate API markdown
 
-Before you start contributing the documentation, it is recommented you setup a local environment where the changes could be tested.
+```bash
+node api-gen/run.mjs prepare   # generate + copy into site/public/api-markdown and api-meta
+just site-install
+just site-dev                  # start dev server (stop it first if you just ran prepare)
+```
 
-There are a couple of ways to setup the local development environment:
+Or via just: `just prepare-api`
 
-- [Developing inside Docker](https://github.com/AutoFixture/AutoFixture.github.io/wiki/Docker-Environment-Setup)
-- [Developing locally](https://github.com/AutoFixture/AutoFixture.github.io/wiki/Local-Environment-Setup)
+API content is generated locally and not committed. Run `prepare` before starting the dev server.
 
-## Roadmap 🚧
+Needs [DocFX](https://dotnet.github.io/docfx/), [Node.js](https://nodejs.org/), and optionally [just](https://github.com/casey/just#installation).
 
-> :warning: There is currently an ongoing effort to document AutoFixture.
-> Any contributions to the documentation are welcome.
+## CI / deploy
 
-- [x] Overview
-- [x] Quick Start guide
-- [x] Fixture creation
-- [x] Fixture customization
-  - [ ] Customize
-  - [ ] Build
-- [ ] Freeze and Inject features
-- [ ] Testing frameworks integration
-  - [ ] xUnit
-  - [ ] NUnit
-- [ ] Mocking framework integration
-  - [ ] Moq
-  - [ ] NSubstitute
-  - [ ] FakeItEasy
-  - [ ] Foq
-- [ ] Idioms
-  - [ ] Assertions
-  - [ ] FsCheck
-- [ ] Internal library design and philosophy
-  - [ ] Customizations
-  - [ ] Behaviors
-  - [ ] Specimen Builders
-  - [ ] Generators
-- [ ] Document upcoming deprecations
+- **CI** (PRs to `master`): build only — `.github/workflows/ci.yml`
+- **Deploy** (push to `master` or manual): build + GitHub Pages — `.github/workflows/deploy.yml`
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for the full runbook (Pages setup, rollback, DNS, troubleshooting).
+
+Custom domain: `site/public/CNAME` → `autofixture.com`.
