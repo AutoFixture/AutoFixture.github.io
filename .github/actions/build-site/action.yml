@@ -49,6 +49,11 @@ runs:
       run: npm ci
       working-directory: site
 
+    - name: Prepare agent assets
+      shell: bash
+      run: npm run prepare-agent-assets
+      working-directory: site
+
     - name: Generate static site
       shell: bash
       run: npm run generate
