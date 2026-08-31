@@ -28,7 +28,32 @@ function listTargetFrameworks(packageDir) {
 
 function extractNupkg(nupkgPath, destination) {
   fs.mkdirSync(destination, { recursive: true })
-  execSync(`tar -xf "${nupkgPath}" -C "${destination}"`, { stdio: 'inherit' })
+
+  // .nupkg is a ZIP. GNU tar (Linux CI) cannot extract zip; Windows/macOS tar often can.
+  /** @type {Array<() => void>} */
+  const attempts = process.platform === 'win32'
+    ? [
+        () => execSync(`tar -xf "${nupkgPath}" -C "${destination}"`, { stdio: 'inherit' }),
+      ]
+    : [
+        () => execSync(`unzip -o -q "${nupkgPath}" -d "${destination}"`, { stdio: 'inherit' }),
+        () => execSync(`tar -xf "${nupkgPath}" -C "${destination}"`, { stdio: 'inherit' }),
+      ]
+
+  /** @type {unknown} */
+  let lastError
+  for (const attempt of attempts) {
+    try {
+      attempt()
+      return
+    } catch (error) {
+      lastError = error
+    }
+  }
+
+  throw lastError instanceof Error
+    ? lastError
+    : new Error(`Failed to extract ${nupkgPath}`)
 }
 
 export async function ensureNuGetPackage(cacheRoot, pkg) {
