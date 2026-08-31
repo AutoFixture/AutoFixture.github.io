@@ -62,6 +62,14 @@ function stripFrontmatter(markdown: string) {
   return markdown.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '')
 }
 
+/** DocFX escapes >, (, ) in signatures; undo so generics read as Create<T>(). */
+export function unescapeDocFxMarkdown(markdown: string) {
+  return markdown
+    .replace(/\\>/g, '>')
+    .replace(/\\\(/g, '(')
+    .replace(/\\\)/g, ')')
+}
+
 /**
  * Keep DocFX / intentional HTML tags; rewrite C# generics like Create&lt;T&gt;()
  * so markdown-it with html:true does not treat them as tags.
@@ -116,7 +124,9 @@ export async function renderApiMarkdown(markdown: string) {
   md.renderer.rules.table_open = () => '<div class="api-table-wrap"><table>'
   md.renderer.rules.table_close = () => '</table></div>'
 
-  const prepared = protectNonHtmlAngleBrackets(stripFrontmatter(markdown))
+  const prepared = protectNonHtmlAngleBrackets(
+    unescapeDocFxMarkdown(stripFrontmatter(markdown)),
+  )
   const html = md.render(prepared)
   return restoreProtectedAngleBrackets(normalizeHeadingAnchors(html))
 }

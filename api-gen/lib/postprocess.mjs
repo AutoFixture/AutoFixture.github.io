@@ -116,6 +116,14 @@ function repairBrokenMarkdownLinks(content) {
   )
 }
 
+/** DocFX escapes >, (, ) in signatures; undo so generics read as Create<T>(). */
+export function unescapeDocFxMarkdown(content) {
+  return content
+    .replace(/\\>/g, '>')
+    .replace(/\\\(/g, '(')
+    .replace(/\\\)/g, ')')
+}
+
 function rewriteMarkdownLinks(content, packageId, versionSegment, packageDir, pageIndex) {
   function linkFor(file, hash = '') {
     const slug = String(file).replace(/\.md$/i, '').toLowerCase()
@@ -179,9 +187,11 @@ function processPackageDir(outRoot, dir, pageIndex) {
     if (!entry.isFile() || !entry.name.toLowerCase().endsWith('.md')) continue
     const filePath = path.join(dir, entry.name)
     const original = fs.readFileSync(filePath, 'utf8')
-    const updated = annotateMemberHeadingIds(
-      rewriteMarkdownLinks(original, packageId, versionSegment, dir, pageIndex),
-    ).replace(/See the \[table of contents\]\(\.\/toc\.yml\)\.\r?\n?/i, '')
+    const updated = unescapeDocFxMarkdown(
+      annotateMemberHeadingIds(
+        rewriteMarkdownLinks(original, packageId, versionSegment, dir, pageIndex),
+      ).replace(/See the \[table of contents\]\(\.\/toc\.yml\)\.\r?\n?/i, ''),
+    )
     if (updated !== original) {
       fs.writeFileSync(filePath, updated)
     }
