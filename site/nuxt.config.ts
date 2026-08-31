@@ -80,7 +80,9 @@ export default defineNuxtConfig({
     build: {
       markdown: {
         highlight: {
+          // Must set `light` too — @nuxt/ui defaults it to material-theme-lighter.
           theme: {
+            light: 'light-plus',
             default: 'light-plus',
             dark: 'dark-plus',
           },
@@ -92,8 +94,23 @@ export default defineNuxtConfig({
             'json',
             'yaml',
             'md',
+            'js',
+            'ts',
+            'html',
+            'css',
+            'vue',
           ],
         },
+      },
+    },
+  },
+  // Explicit MDC override (Nuxt UI registers highlight defaults on @nuxtjs/mdc).
+  mdc: {
+    highlight: {
+      theme: {
+        light: 'light-plus',
+        default: 'light-plus',
+        dark: 'dark-plus',
       },
     },
   },

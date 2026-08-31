@@ -1,8 +1,5 @@
 import MarkdownIt from 'markdown-it'
-import { getCodeHighlighter, normalizeLang } from './highlightCode'
-
-const SHIKI_LIGHT_THEME = 'light-plus'
-const SHIKI_DARK_THEME = 'dark-plus'
+import { getCodeHighlighter, normalizeLang, SHIKI_THEMES } from './highlightCode'
 
 function stripHtml(value: string) {
   return value
@@ -74,10 +71,8 @@ export async function renderApiMarkdown(markdown: string) {
     const code = token.content.replace(/\n$/, '')
     const html = highlighter.codeToHtml(code, {
       lang,
-      themes: {
-        light: SHIKI_LIGHT_THEME,
-        dark: SHIKI_DARK_THEME,
-      },
+      themes: { ...SHIKI_THEMES },
+      defaultColor: false,
     })
 
     return `<div class="api-code-block">${html}</div>`

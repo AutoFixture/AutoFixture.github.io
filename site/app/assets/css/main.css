@@ -44,7 +44,7 @@
   margin: 0;
   padding: 1rem;
   border-radius: 0;
-  background: transparent !important;
+  background: transparent;
   font-size: 0.875rem;
   line-height: 1.625;
 }
@@ -53,15 +53,45 @@
   font-size: inherit;
 }
 
-/* Shiki dual themes — sync with Nuxt UI color mode (html.dark) */
-html:not(.dark) :where(.shiki, .shiki span) {
-  color: var(--shiki-light) !important;
-  background-color: var(--shiki-light-bg) !important;
+/*
+ * Shiki dual themes (class-based), same theme names everywhere:
+ * light/default = light-plus, dark = dark-plus, defaultColor: false
+ * https://shiki.style/guide/dual-themes#class-based-dark-mode
+ */
+html .shiki {
+  background-color: var(--shiki-default-bg, var(--shiki-light-bg));
+  color: var(--shiki-default, var(--shiki-light));
 }
 
-html.dark :where(.shiki, .shiki span) {
-  color: var(--shiki-dark) !important;
-  background-color: var(--shiki-dark-bg) !important;
+html .shiki span {
+  color: var(--shiki-default, var(--shiki-light));
+  font-style: var(--shiki-default-font-style, var(--shiki-light-font-style));
+  font-weight: var(--shiki-default-font-weight, var(--shiki-light-font-weight));
+  text-decoration: var(--shiki-default-text-decoration, var(--shiki-light-text-decoration));
+}
+
+html.light .shiki {
+  background-color: var(--shiki-light-bg, var(--shiki-default-bg));
+  color: var(--shiki-light, var(--shiki-default));
+}
+
+html.light .shiki span {
+  color: var(--shiki-light, var(--shiki-default));
+  font-style: var(--shiki-light-font-style, var(--shiki-default-font-style));
+  font-weight: var(--shiki-light-font-weight, var(--shiki-default-font-weight));
+  text-decoration: var(--shiki-light-text-decoration, var(--shiki-default-text-decoration));
+}
+
+html.dark .shiki {
+  background-color: var(--shiki-dark-bg);
+  color: var(--shiki-dark);
+}
+
+html.dark .shiki span {
+  color: var(--shiki-dark);
+  font-style: var(--shiki-dark-font-style);
+  font-weight: var(--shiki-dark-font-weight);
+  text-decoration: var(--shiki-dark-text-decoration);
 }
 
 .prose-docs :where(code) {
