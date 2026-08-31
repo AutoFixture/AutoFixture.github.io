@@ -1,0 +1,175 @@
+{
+  "packages": [
+    {
+      "id": "autofixture",
+      "name": "AutoFixture",
+      "nugetId": "AutoFixture",
+      "version": "5.0.0-rc.1",
+      "line": "v5",
+      "primary": true,
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "xunit3",
+      "name": "AutoFixture.Xunit3",
+      "nugetId": "AutoFixture.Xunit3",
+      "version": "5.0.0-rc.1",
+      "line": "v5",
+      "targetFramework": "net8.0"
+    },
+    {
+      "id": "nunit4",
+      "name": "AutoFixture.NUnit4",
+      "nugetId": "AutoFixture.NUnit4",
+      "version": "5.0.0-rc.1",
+      "line": "v5",
+      "targetFramework": "net8.0"
+    },
+    {
+      "id": "automoq",
+      "name": "AutoFixture.AutoMoq",
+      "nugetId": "AutoFixture.AutoMoq",
+      "version": "5.0.0-rc.1",
+      "line": "v5",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "autonsubstitute",
+      "name": "AutoFixture.AutoNSubstitute",
+      "nugetId": "AutoFixture.AutoNSubstitute",
+      "version": "5.0.0-rc.1",
+      "line": "v5",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "autofakeiteasy",
+      "name": "AutoFixture.AutoFakeItEasy",
+      "nugetId": "AutoFixture.AutoFakeItEasy",
+      "version": "5.0.0-rc.1",
+      "line": "v5",
+      "targetFramework": "net8.0"
+    },
+    {
+      "id": "seedextensions",
+      "name": "AutoFixture.SeedExtensions",
+      "nugetId": "AutoFixture.SeedExtensions",
+      "version": "5.0.0-rc.1",
+      "line": "v5",
+      "targetFramework": "net8.0"
+    },
+    {
+      "id": "idioms",
+      "name": "AutoFixture.Idioms",
+      "nugetId": "AutoFixture.Idioms",
+      "version": "5.0.0-rc.1",
+      "line": "v5",
+      "targetFramework": "net8.0"
+    },
+    {
+      "id": "autofixture",
+      "name": "AutoFixture",
+      "nugetId": "AutoFixture",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "xunit",
+      "name": "AutoFixture.xUnit",
+      "nugetId": "AutoFixture.xUnit",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "net452",
+      "assemblyName": "AutoFixture.Xunit"
+    },
+    {
+      "id": "xunit2",
+      "name": "AutoFixture.xUnit2",
+      "nugetId": "AutoFixture.xUnit2",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "nunit2",
+      "name": "AutoFixture.NUnit2",
+      "nugetId": "AutoFixture.NUnit2",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "net452"
+    },
+    {
+      "id": "nunit3",
+      "name": "AutoFixture.NUnit3",
+      "nugetId": "AutoFixture.NUnit3",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "automoq",
+      "name": "AutoFixture.AutoMoq",
+      "nugetId": "AutoFixture.AutoMoq",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "autonsubstitute",
+      "name": "AutoFixture.AutoNSubstitute",
+      "nugetId": "AutoFixture.AutoNSubstitute",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "autofakeiteasy",
+      "name": "AutoFixture.AutoFakeItEasy",
+      "nugetId": "AutoFixture.AutoFakeItEasy",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "seedextensions",
+      "name": "AutoFixture.SeedExtensions",
+      "nugetId": "AutoFixture.SeedExtensions",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "idioms",
+      "name": "AutoFixture.Idioms",
+      "nugetId": "AutoFixture.Idioms",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "idioms-fscheck",
+      "name": "AutoFixture.Idioms.FsCheck",
+      "nugetId": "AutoFixture.Idioms.FsCheck",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "autofoq",
+      "name": "AutoFixture.AutoFoq",
+      "nugetId": "AutoFixture.AutoFoq",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "netstandard2.0"
+    },
+    {
+      "id": "autorhinomocks",
+      "name": "AutoFixture.AutoRhinoMocks",
+      "nugetId": "AutoFixture.AutoRhinoMocks",
+      "version": "4.18.1",
+      "line": "v4",
+      "targetFramework": "net452",
+      "assemblyName": "AutoFixture.AutoRhinoMock"
+    }
+  ]
+}

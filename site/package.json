@@ -1,0 +1,26 @@
+{
+  "name": "site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --port 3000",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.15.2",
+    "@nuxt/fonts": "^0.14.0",
+    "@nuxt/ui": "^4.11.0",
+    "better-sqlite3": "^13.0.3",
+    "markdown-it": "^14.1.0",
+    "nuxt": "^4.5.2",
+    "shiki": "^3.4.0",
+    "vue": "^3.5.41",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.127",
+    "@types/markdown-it": "^14.1.2"
+  }
+}

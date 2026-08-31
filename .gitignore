@@ -1,4 +1,29 @@
-_site
-.sass-cache
-.jekyll-metadata
+###############
+# API generator
+###############
+api-gen/repos/
+api-gen/packages-cache/
+api-gen/out/
+api-gen/docfx.json
+
+###############
+# Nuxt site
+###############
+site/node_modules/
+site/.nuxt/
+site/.output/
+site/dist/
+site/.data/
+site/content/api/
+site/public/api-markdown/
+site/public/api-meta/
+site/public/api-catalog.json
+
+###############
+# OS / IDE
+###############
+node_modules/
 *.swp
+.vs/
+.DS_Store
+*.log
