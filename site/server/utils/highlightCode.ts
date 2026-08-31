@@ -1,42 +1,62 @@
 import { createHighlighter, type Highlighter } from 'shiki'
 
-const SHIKI_LIGHT_THEME = 'light-plus'
-const SHIKI_DARK_THEME = 'dark-plus'
+/** Same theme keys as Nuxt Content / @nuxtjs/mdc (defaultColor: false). */
+export const SHIKI_THEME_LIGHT = 'light-plus'
+export const SHIKI_THEME_DARK = 'dark-plus'
 
-const LANGS = ['csharp', 'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'bash', 'xml', 'yaml', 'md', 'text'] as const
+export const SHIKI_THEMES = {
+  // Include `light` so we override Nuxt UI's MDC default (material-theme-lighter).
+  light: SHIKI_THEME_LIGHT,
+  default: SHIKI_THEME_LIGHT,
+  dark: SHIKI_THEME_DARK,
+} as const
+
+export const SHIKI_LANGS = [
+  'csharp',
+  'json',
+  'js',
+  'ts',
+  'html',
+  'css',
+  'vue',
+  'shell',
+  'bash',
+  'xml',
+  'yaml',
+  'md',
+  'text',
+] as const
+
+export type ShikiLang = (typeof SHIKI_LANGS)[number]
 
 let highlighterPromise: Promise<Highlighter> | null = null
 
 async function getHighlighter() {
   if (!highlighterPromise) {
     highlighterPromise = createHighlighter({
-      themes: [SHIKI_LIGHT_THEME, SHIKI_DARK_THEME],
-      langs: [...LANGS],
+      themes: [SHIKI_THEME_LIGHT, SHIKI_THEME_DARK],
+      langs: [...SHIKI_LANGS],
     })
   }
   return highlighterPromise
 }
 
-function normalizeLang(lang: string) {
+export function normalizeLang(lang: string): ShikiLang {
   const value = lang.trim().toLowerCase()
   if (value === 'cs') return 'csharp'
   if (value === 'csproj') return 'xml'
-  return LANGS.includes(value as typeof LANGS[number]) ? value : 'text'
+  return SHIKI_LANGS.includes(value as ShikiLang) ? (value as ShikiLang) : 'text'
 }
 
 export async function getCodeHighlighter() {
   return getHighlighter()
 }
 
-export { normalizeLang }
-
 export async function highlightCode(code: string, lang = 'text') {
   const highlighter = await getHighlighter()
   return highlighter.codeToHtml(code.trimEnd(), {
     lang: normalizeLang(lang),
-    themes: {
-      light: SHIKI_LIGHT_THEME,
-      dark: SHIKI_DARK_THEME,
-    },
+    themes: { ...SHIKI_THEMES },
+    defaultColor: false,
   })
 }
