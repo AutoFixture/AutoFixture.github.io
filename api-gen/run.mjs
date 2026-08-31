@@ -186,7 +186,8 @@ function syncPackageDir(sourceDir, markdownDir, metaDir) {
 
     const from = path.join(sourceDir, entry.name)
     if (entry.name.toLowerCase().endsWith('.md')) {
-      fs.copyFileSync(from, path.join(markdownDir, entry.name))
+      // URLs and loaders use lowercase slugs; keep filenames lowercase for Linux CI.
+      fs.copyFileSync(from, path.join(markdownDir, entry.name.toLowerCase()))
       continue
     }
 

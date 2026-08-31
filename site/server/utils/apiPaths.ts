@@ -1,3 +1,4 @@
+import { existsSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 
 const API_PATH_RE = /^\/api\/([^/]+)\/([^/]+)(?:\/(.*))?$/i
@@ -21,10 +22,22 @@ export function parseApiRoutePath(path: string) {
   }
 }
 
+function resolveFile(dir: string, fileName: string) {
+  const exact = join(dir, fileName)
+  if (existsSync(exact)) return exact
+
+  if (!existsSync(dir)) return exact
+
+  const match = readdirSync(dir).find(entry => entry.toLowerCase() === fileName.toLowerCase())
+  return match ? join(dir, match) : exact
+}
+
 export function apiMarkdownFile(packageId: string, versionSegment: string, slug: string) {
-  return join(process.cwd(), 'public', 'api-markdown', packageId, versionSegment, `${slug}.md`)
+  const dir = join(process.cwd(), 'public', 'api-markdown', packageId, versionSegment)
+  return resolveFile(dir, `${slug}.md`)
 }
 
 export function apiPageMetaFile(packageId: string, versionSegment: string, slug: string) {
-  return join(process.cwd(), 'public', 'api-meta', packageId, versionSegment, 'pages', `${slug}.json`)
+  const dir = join(process.cwd(), 'public', 'api-meta', packageId, versionSegment, 'pages')
+  return resolveFile(dir, `${slug}.json`)
 }
