@@ -6,7 +6,7 @@ Nuxt Content app for AutoFixture docs.
 
 ```bash
 just site-install
-just prepare-api    # generate + copy API markdown into content/api
+just prepare-api    # generate + copy API markdown into public/api-markdown
 just site-dev
 ```
 
@@ -15,7 +15,7 @@ just site-dev
 | Path | Content |
 |------|---------|
 | `/` | Home |
-| `/docs/**` | Guides (Getting Started section; docs layout) |
-| `/api/{package}/{line}/**` | Generated API reference |
+| `/docs/**` | Guides (Get started section; docs layout) |
+| `/api/{package}/{version}/**` | Generated API reference |
 
-On API pages, the header banner shows the docs line (`v5`) and the concrete package version from `index.md` frontmatter.
+API markdown is generated into `public/api-markdown` (not Nuxt Content). On API pages, the header shows the package and version from the API catalog.

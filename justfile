@@ -9,11 +9,11 @@ default:
 generate-api:
     node api-gen/run.mjs generate
 
-# Copy generated API markdown into the Nuxt content tree
+# Copy generated API markdown into site/public/api-markdown
 sync-api:
     node api-gen/run.mjs sync
 
-# Generate API markdown and sync into the site
+# Generate API markdown and sync into site/public
 prepare-api:
     node api-gen/run.mjs prepare
 

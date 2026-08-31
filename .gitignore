@@ -14,7 +14,6 @@ site/.nuxt/
 site/.output/
 site/dist/
 site/.data/
-site/content/api/
 site/public/api-markdown/
 site/public/api-meta/
 site/public/api-catalog.json

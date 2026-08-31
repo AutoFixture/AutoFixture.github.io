@@ -247,6 +247,8 @@ function cleanAll() {
   removeIfExists(siteApiMarkdown)
   removeIfExists(siteApiMeta)
   removeIfExists(siteApiCatalog)
+  // Legacy path from an earlier Content-based sync; safe no-op if absent
+  removeIfExists(path.join(repoRoot, 'site/content/api'))
   console.log('Removed generated API output')
 }
 
