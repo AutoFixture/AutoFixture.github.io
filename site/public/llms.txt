@@ -1,0 +1,69 @@
+# AutoFixture documentation
+> AutoFixture creates anonymous test data so you write less arrange code in .NET unit tests.
+
+This file helps LLM agents discover readable documentation on https://autofixture.com.
+
+Prefer markdown URLs when you need exact C# signatures (generics stay intact). HTML pages are fine for how-to reading.
+
+## Start here
+
+- https://autofixture.com/docs/get-started/introduction
+- https://autofixture.com/docs/get-started/installation
+- https://autofixture.com/docs/get-started/first-test
+- https://autofixture.com/docs/reference/cheat-sheet
+- https://autofixture.com/docs/reference/faq
+
+## Guide HTML
+
+Guides live under `/docs/{section}/{page}`.
+
+- https://autofixture.com/docs/get-started/introduction
+- https://autofixture.com/docs/fundamentals/fixture-and-create
+- https://autofixture.com/docs/fundamentals/build-dsl
+- https://autofixture.com/docs/fundamentals/customizations
+- https://autofixture.com/docs/how-to/collections
+- https://autofixture.com/docs/integrations/overview
+- https://autofixture.com/docs/integrations/xunit3
+- https://autofixture.com/docs/integrations/automoq
+- https://autofixture.com/docs/advanced/specimen-pipeline
+- https://autofixture.com/docs/reference/packages
+- https://autofixture.com/docs/reference/v4-to-v5-migration
+
+## Guide markdown (preferred for agents)
+
+Same content as HTML, as raw markdown:
+
+  https://autofixture.com/docs-markdown/{section}/{page}.md
+
+Examples:
+
+- https://autofixture.com/docs-markdown/get-started/introduction.md
+- https://autofixture.com/docs-markdown/fundamentals/customizations.md
+- https://autofixture.com/docs-markdown/reference/cheat-sheet.md
+
+## API reference
+
+Browse HTML: https://autofixture.com/api (redirects to latest AutoFixture v5)
+
+Raw API markdown (best for signatures):
+
+  https://autofixture.com/api-markdown/{packageId}/{versionSegment}/{slug}.md
+
+Example (Fixture class, v5):
+
+- https://autofixture.com/api-markdown/autofixture/5-0-0-rc-1/autofixture.fixture.md
+- HTML twin: https://autofixture.com/api/autofixture/5-0-0-rc-1/autofixture.fixture/
+
+Slugs and version segments are lowercase. Package ids match the catalog (autofixture, xunit3, automoq, idioms, …).
+
+## Machine-readable indexes
+
+- https://autofixture.com/api-catalog.json — packages and versions
+- https://autofixture.com/api-meta/routes.json — all API HTML routes
+- https://autofixture.com/api-meta/{packageId}/{versionSegment}/toc.json — package TOC
+- https://autofixture.com/api-meta/{packageId}/{versionSegment}/search.json — searchable API snippets
+- https://autofixture.com/sitemap.xml — HTML and markdown URLs
+
+## Optional
+
+- https://autofixture.com/robots.txt

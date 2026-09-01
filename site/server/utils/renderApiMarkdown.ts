@@ -1,6 +1,13 @@
 import MarkdownIt from 'markdown-it'
 import { getCodeHighlighter, normalizeLang, SHIKI_THEMES } from './highlightCode'
 
+/** Private-use placeholders so markdown-it html_inline does not eat C# generics. */
+const LT = '\uE000'
+const GT = '\uE001'
+
+const HTML_TAG_RE =
+  /^<\/?(?:a|abbr|b|br|code|div|em|h[1-6]|hr|i|img|li|ol|p|pre|span|strong|sub|sup|table|tbody|td|th|thead|tr|ul)(?:\s[\s\S]*)?>$/i
+
 function stripHtml(value: string) {
   return value
     .replace(/<[^>]+>/g, '')
@@ -55,6 +62,42 @@ function stripFrontmatter(markdown: string) {
   return markdown.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '')
 }
 
+/** DocFX escapes >, (, ) in signatures; undo so generics read as Create<T>(). */
+export function unescapeDocFxMarkdown(markdown: string) {
+  return markdown
+    .replace(/\\>/g, '>')
+    .replace(/\\\(/g, '(')
+    .replace(/\\\)/g, ')')
+}
+
+/**
+ * Keep DocFX / intentional HTML tags; rewrite C# generics like Create&lt;T&gt;()
+ * so markdown-it with html:true does not treat them as tags.
+ * Fenced and inline code are left untouched for Shiki / default code rendering.
+ */
+export function protectNonHtmlAngleBrackets(markdown: string) {
+  const slots: string[] = []
+  const park = (match: string) => {
+    const index = slots.length
+    slots.push(match)
+    return `\0SLOT${index}\0`
+  }
+
+  let text = markdown.replace(/```[\s\S]*?```/g, park)
+  text = text.replace(/`[^`\n]+`/g, park)
+
+  text = text.replace(/<[^>\n]+>/g, (match) => {
+    if (HTML_TAG_RE.test(match)) return match
+    return match.replaceAll('<', LT).replaceAll('>', GT)
+  })
+
+  return text.replace(/\0SLOT(\d+)\0/g, (_, index: string) => slots[Number(index)]!)
+}
+
+export function restoreProtectedAngleBrackets(html: string) {
+  return html.replaceAll(LT, '&lt;').replaceAll(GT, '&gt;')
+}
+
 export async function renderApiMarkdown(markdown: string) {
   const highlighter = await getCodeHighlighter()
   const md = new MarkdownIt({
@@ -81,5 +124,9 @@ export async function renderApiMarkdown(markdown: string) {
   md.renderer.rules.table_open = () => '<div class="api-table-wrap"><table>'
   md.renderer.rules.table_close = () => '</table></div>'
 
-  return normalizeHeadingAnchors(md.render(stripFrontmatter(markdown)))
+  const prepared = protectNonHtmlAngleBrackets(
+    unescapeDocFxMarkdown(stripFrontmatter(markdown)),
+  )
+  const html = md.render(prepared)
+  return restoreProtectedAngleBrackets(normalizeHeadingAnchors(html))
 }

@@ -29,8 +29,12 @@ site-install:
 site-dev:
     npm run dev --prefix site
 
-# Statically generate the site (same as CI; run prepare-api first)
-site-generate:
+# Mirror guide markdown + write sitemap (also runs via npm pregenerate)
+prepare-agent-assets:
+    npm run prepare-agent-assets --prefix site
+
+# Statically generate the site (same as CI; run prepare-api first so API routes enter the sitemap)
+site-generate: prepare-agent-assets
     npm run generate --prefix site
 
 # Prepare API docs and generate the static site (CI parity)

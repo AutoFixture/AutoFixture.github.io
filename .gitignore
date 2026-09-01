@@ -17,6 +17,8 @@ site/.data/
 site/public/api-markdown/
 site/public/api-meta/
 site/public/api-catalog.json
+site/public/docs-markdown/
+site/public/sitemap.xml
 
 ###############
 # OS / IDE

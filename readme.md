@@ -19,6 +19,8 @@ Or via just: `just prepare-api`
 
 API content is generated locally and not committed. Run `prepare` before starting the dev server.
 
+For a full static build, run `prepare-api` before `site-generate` so the agent sitemap includes API routes. See [site/readme.md](./site/readme.md) for `/llms.txt`, docs-markdown mirroring, and sitemap details.
+
 Needs [DocFX](https://dotnet.github.io/docfx/), [Node.js](https://nodejs.org/), and optionally [just](https://github.com/casey/just#installation).
 
 ## CI / deploy

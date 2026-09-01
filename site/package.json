@@ -5,6 +5,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --port 3000",
+    "prepare-agent-assets": "node scripts/prepare-agent-assets.mjs",
+    "pregenerate": "node scripts/prepare-agent-assets.mjs",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
