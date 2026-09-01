@@ -24,6 +24,7 @@ const siteUrl = 'https://autofixture.com'
 const siteDescription =
   'AutoFixture makes unit tests more productive by creating anonymous test data for .NET.'
 const ogImage = `${siteUrl}/og-image.png`
+const seoTagPriority = -5
 
 export default defineNuxtConfig({
   runtimeConfig: {
@@ -47,17 +48,19 @@ export default defineNuxtConfig({
     head: {
       title: 'AutoFixture',
       meta: [
-        { name: 'description', content: siteDescription },
-        { property: 'og:site_name', content: 'AutoFixture' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'AutoFixture' },
-        { property: 'og:description', content: siteDescription },
-        { property: 'og:image', content: ogImage },
-        { property: 'og:url', content: `${siteUrl}/` },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'AutoFixture' },
-        { name: 'twitter:description', content: siteDescription },
-        { name: 'twitter:image', content: ogImage },
+        { name: 'description', content: siteDescription, tagPriority: seoTagPriority },
+        { property: 'og:site_name', content: 'AutoFixture', tagPriority: seoTagPriority },
+        { property: 'og:type', content: 'website', tagPriority: seoTagPriority },
+        { property: 'og:title', content: 'AutoFixture', tagPriority: seoTagPriority },
+        { property: 'og:description', content: siteDescription, tagPriority: seoTagPriority },
+        { property: 'og:image', content: ogImage, tagPriority: seoTagPriority },
+        { property: 'og:image:width', content: '1200', tagPriority: seoTagPriority },
+        { property: 'og:image:height', content: '630', tagPriority: seoTagPriority },
+        { property: 'og:url', content: `${siteUrl}/`, tagPriority: seoTagPriority },
+        { name: 'twitter:card', content: 'summary_large_image', tagPriority: seoTagPriority },
+        { name: 'twitter:title', content: 'AutoFixture', tagPriority: seoTagPriority },
+        { name: 'twitter:description', content: siteDescription, tagPriority: seoTagPriority },
+        { name: 'twitter:image', content: ogImage, tagPriority: seoTagPriority },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
