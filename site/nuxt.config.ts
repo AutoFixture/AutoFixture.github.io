@@ -20,7 +20,17 @@ function readApiPrerenderRoutes() {
   }
 }
 
+const siteUrl = 'https://autofixture.com'
+const siteDescription =
+  'AutoFixture makes unit tests more productive by creating anonymous test data for .NET.'
+const ogImage = `${siteUrl}/og-image.png`
+
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      siteUrl,
+    },
+  },
   modules: [
     '@nuxt/ui',
     '@nuxt/content',
@@ -37,10 +47,17 @@ export default defineNuxtConfig({
     head: {
       title: 'AutoFixture',
       meta: [
-        {
-          name: 'description',
-          content: 'AutoFixture makes unit tests more productive by creating anonymous test data for .NET.',
-        },
+        { name: 'description', content: siteDescription },
+        { property: 'og:site_name', content: 'AutoFixture' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'AutoFixture' },
+        { property: 'og:description', content: siteDescription },
+        { property: 'og:image', content: ogImage },
+        { property: 'og:url', content: `${siteUrl}/` },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'AutoFixture' },
+        { name: 'twitter:description', content: siteDescription },
+        { name: 'twitter:image', content: ogImage },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
