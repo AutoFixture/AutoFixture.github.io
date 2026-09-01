@@ -1,7 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'api',
-  middleware: ['api-normalize'],
 })
 
 const route = useRoute()

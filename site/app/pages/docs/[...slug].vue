@@ -4,17 +4,20 @@ definePageMeta({
 })
 
 const route = useRoute()
+const docsPath = computed(() => route.path.replace(/\/$/, '') || '/')
 
-const { data: page } = await useAsyncData(route.path, () =>
-  queryCollection('docs').path(route.path).first(),
+const { data: page } = await useAsyncData(
+  () => `docs:${docsPath.value}`,
+  () => queryCollection('docs').path(docsPath.value).first(),
 )
 
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
-  queryCollectionItemSurroundings('docs', route.path),
+const { data: surround } = await useAsyncData(
+  () => `docs:${docsPath.value}-surround`,
+  () => queryCollectionItemSurroundings('docs', docsPath.value),
 )
 
 useSeoMeta({

@@ -54,7 +54,7 @@ const searchPlaceholder = computed(() => {
   return `Search ${packageName} API…`
 })
 
-const { defaultApiPath } = useApiCatalog()
+const { defaultApiPath, hasMultiplePackages } = useApiCatalog()
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
@@ -174,6 +174,28 @@ const mobileDocsNav = computed(
           :navigation="mobileDocsNav"
           highlight
         />
+
+        <template v-if="route.path.startsWith('/api/')">
+          <USeparator class="my-4" />
+
+          <div class="space-y-3">
+            <ApiPackageSelect v-if="hasMultiplePackages" />
+            <ApiVersionSelect />
+
+            <p
+              v-if="apiNavigation.length"
+              class="mb-2 text-xs font-semibold tracking-wide text-muted uppercase"
+            >
+              API
+            </p>
+
+            <UContentNavigation
+              v-if="apiNavigation.length"
+              :navigation="apiNavigation"
+              highlight
+            />
+          </div>
+        </template>
       </template>
     </UHeader>
 
