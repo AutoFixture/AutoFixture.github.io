@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { defaultApiPath } = useApiCatalog()
 
-useSeoMeta({
+usePageSeo({
   title: 'AutoFixture',
   description:
     'AutoFixture makes unit tests more productive by creating anonymous test data for .NET.',

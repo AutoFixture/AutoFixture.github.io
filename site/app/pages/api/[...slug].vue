@@ -62,8 +62,9 @@ if (!page.value) {
 const pageTitle = computed(() => page.value?.title ?? 'API')
 const tocLinks = computed(() => page.value?.tocLinks ?? [])
 
-useSeoMeta({
+usePageSeo({
   title: () => pageTitle.value,
+  description: () => `AutoFixture API reference — ${pageTitle.value}`,
 })
 </script>
 

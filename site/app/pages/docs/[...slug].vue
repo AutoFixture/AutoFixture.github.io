@@ -20,9 +20,9 @@ const { data: surround } = await useAsyncData(
   () => queryCollectionItemSurroundings('docs', docsPath.value),
 )
 
-useSeoMeta({
-  title: page.value.title,
-  description: page.value.description,
+usePageSeo({
+  title: () => page.value?.title,
+  description: () => page.value?.description,
 })
 
 const tocLinks = computed(() => page.value?.body?.toc?.links ?? [])
