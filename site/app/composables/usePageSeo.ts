@@ -18,7 +18,7 @@ export function usePageSeo(options: PageSeoOptions = {}) {
   const route = useRoute()
   const { public: { siteUrl } } = useRuntimeConfig()
 
-  const title = computed(() => toValue(options.title) ?? 'AutoFixture')
+  const title = computed(() => formatDocumentTitle(toValue(options.title)))
   const description = computed(() => toValue(options.description) ?? DEFAULT_DESCRIPTION)
   const image = computed(() => `${siteUrl}${toValue(options.image) ?? DEFAULT_OG_IMAGE}`)
   const url = computed(() => `${siteUrl}${route.path}`)
