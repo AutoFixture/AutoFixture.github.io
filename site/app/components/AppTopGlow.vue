@@ -1,0 +1,65 @@
+<template>
+  <svg
+    viewBox="0 0 1440 120"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="pointer-events-none"
+    aria-hidden="true"
+  >
+    <mask
+      id="app-top-glow-mask"
+      fill="white"
+    >
+      <path d="M0 0H1440V120H0V0Z" />
+    </mask>
+    <path
+      d="M0 0H1440V120H0V0Z"
+      fill="url(#app-top-glow-fade)"
+      fill-opacity="0.22"
+    />
+    <path
+      d="M0 2H1440V-2H0V2Z"
+      fill="url(#app-top-glow-edge)"
+      mask="url(#app-top-glow-mask)"
+    />
+    <defs>
+      <linearGradient
+        id="app-top-glow-fade"
+        x1="720"
+        y1="0"
+        x2="720"
+        y2="120"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="currentColor" />
+        <stop
+          offset="1"
+          stop-color="currentColor"
+          stop-opacity="0"
+        />
+      </linearGradient>
+      <linearGradient
+        id="app-top-glow-edge"
+        x1="0"
+        y1="60"
+        x2="1440"
+        y2="60"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop
+          stop-color="currentColor"
+          stop-opacity="0"
+        />
+        <stop
+          offset="0.395"
+          stop-color="currentColor"
+        />
+        <stop
+          offset="1"
+          stop-color="currentColor"
+          stop-opacity="0"
+        />
+      </linearGradient>
+    </defs>
+  </svg>
+</template>

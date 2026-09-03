@@ -191,7 +191,11 @@ const mobileDocsNav = computed(
       </template>
     </UHeader>
 
-    <UMain>
+    <UMain class="relative">
+      <AppTopGlow
+        class="absolute inset-x-0 -top-px -z-10 w-full shrink-0 text-primary opacity-40"
+      />
+
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
