@@ -40,9 +40,12 @@
 }
 
 .landing-code {
+  border-color: color-mix(in oklab, var(--ui-primary) 40%, transparent);
   box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--ui-primary) 18%, transparent),
-    0 0 28px color-mix(in oklab, var(--ui-primary) 12%, transparent);
+    0 0 0 1px color-mix(in oklab, var(--ui-primary) 54%, transparent),
+    0 0 14px color-mix(in oklab, var(--ui-primary) 45%, transparent),
+    0 0 36px color-mix(in oklab, var(--ui-primary) 29%, transparent),
+    0 0 72px color-mix(in oklab, var(--ui-primary) 16%, transparent);
 }
 
 .landing-code :where(pre) {
