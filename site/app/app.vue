@@ -146,15 +146,7 @@ const mobileDocsNav = computed(
 
         <UColorModeButton />
 
-        <UButton
-          color="neutral"
-          variant="ghost"
-          to="https://github.com/AutoFixture"
-          target="_blank"
-          icon="i-lucide-github"
-          aria-label="GitHub"
-          class="hidden sm:inline-flex"
-        />
+        <AppGitHubButton class="hidden sm:inline-flex" />
       </template>
 
       <template #body>
