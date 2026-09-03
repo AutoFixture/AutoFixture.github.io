@@ -56,7 +56,7 @@ const props = defineProps({
       font-weight="700"
       letter-spacing="-0.03em"
     >
-      <tspan fill="var(--ui-primary)">Auto</tspan><tspan fill="currentColor">Fixture</tspan>
+      <tspan fill="currentColor">Auto</tspan><tspan fill="var(--ui-primary)">Fixture</tspan>
     </text>
   </svg>
 </template>

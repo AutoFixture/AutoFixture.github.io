@@ -146,15 +146,7 @@ const mobileDocsNav = computed(
 
         <UColorModeButton />
 
-        <UButton
-          color="neutral"
-          variant="ghost"
-          to="https://github.com/AutoFixture"
-          target="_blank"
-          icon="i-lucide-github"
-          aria-label="GitHub"
-          class="hidden sm:inline-flex"
-        />
+        <AppGitHubButton class="hidden sm:inline-flex" />
       </template>
 
       <template #body>
@@ -199,7 +191,11 @@ const mobileDocsNav = computed(
       </template>
     </UHeader>
 
-    <UMain>
+    <UMain class="relative">
+      <AppTopGlow
+        class="absolute inset-x-0 -top-px -z-10 w-full shrink-0 text-primary opacity-40"
+      />
+
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>

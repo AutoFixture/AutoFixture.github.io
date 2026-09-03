@@ -37,6 +37,10 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/fonts',
   ],
+  colorMode: {
+    preference: 'system',
+    fallback: 'dark',
+  },
   css: ['~/assets/css/main.css'],
   fonts: {
     families: [
@@ -63,7 +67,12 @@ export default defineNuxtConfig({
         { name: 'twitter:image', content: ogImage, tagPriority: seoTagPriority },
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        {
+          key: 'app-favicon',
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/favicon.svg?v=2',
+        },
       ],
     },
   },

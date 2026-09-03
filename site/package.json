@@ -8,7 +8,8 @@
     "prepare-agent-assets": "node scripts/prepare-agent-assets.mjs",
     "pregenerate": "node scripts/prepare-agent-assets.mjs",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
   },
   "dependencies": {
     "@nuxt/content": "^3.15.2",
