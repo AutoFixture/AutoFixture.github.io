@@ -50,6 +50,10 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      // Telegram @WebpageBot often refuses to refresh previews without this.
+      htmlAttrs: {
+        prefix: 'og: http://ogp.me/ns#',
+      },
       title: 'AutoFixture',
       meta: [
         { name: 'description', content: siteDescription, tagPriority: seoTagPriority },
