@@ -15,7 +15,7 @@ const props = defineProps({
     fill="none"
     role="img"
     aria-label="AutoFixture"
-    class="h-6 w-6 shrink-0"
+    class="h-7 w-7 shrink-0"
   >
     <path
       fill="var(--ui-primary)"
@@ -35,7 +35,7 @@ const props = defineProps({
     fill="none"
     role="img"
     aria-label="AutoFixture"
-    class="h-6 w-auto shrink-0"
+    class="h-7 w-auto shrink-0"
   >
     <g transform="translate(0 6) scale(0.75)">
       <path
