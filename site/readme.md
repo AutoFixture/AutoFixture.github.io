@@ -39,7 +39,39 @@ API markdown is generated into `public/api-markdown` (not Nuxt Content). On API 
 1. Mirrors `content/docs/**/*.md` → `public/docs-markdown/` with Nuxt-style paths (numeric prefixes stripped).
 2. Writes `public/sitemap.xml` from those guides plus `public/api-meta/routes.json` when present.
 
-Committed: `public/llms.txt`, `public/robots.txt`.  
+Committed: `public/llms.txt`, `public/robots.txt`.
 Generated (gitignored): `public/docs-markdown/`, `public/sitemap.xml`.
 
 Keep `llms.txt` in sync when you add major guide sections.
+
+## Sidebar badges
+
+Set an optional `badge` in page frontmatter to show a label next to the article in the docs sidebar (desktop and mobile). Badges are explicit — nothing is inferred from dates or git.
+
+String shortcuts:
+
+| Value | Style |
+|-------|--------|
+| `New` | primary / subtle |
+| `Updated` | info / subtle |
+| `Preview` | warning / subtle |
+| any other string | neutral / outline |
+
+```yaml
+---
+title: TUnit
+badge: New
+---
+```
+
+Or pass a Nuxt UI badge object for full control:
+
+```yaml
+---
+title: Example
+badge:
+  label: Beta
+  color: warning
+  variant: subtle
+---
+```

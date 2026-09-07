@@ -24,7 +24,9 @@ Guides live under `/docs/{section}/{page}`.
 - https://autofixture.com/docs/how-to/collections
 - https://autofixture.com/docs/integrations/overview
 - https://autofixture.com/docs/integrations/xunit3
+- https://autofixture.com/docs/integrations/nunit4
 - https://autofixture.com/docs/integrations/automoq
+- https://autofixture.com/docs/integrations/tunit
 - https://autofixture.com/docs/advanced/specimen-pipeline
 - https://autofixture.com/docs/reference/packages
 - https://autofixture.com/docs/reference/v4-to-v5-migration
