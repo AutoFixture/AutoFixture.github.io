@@ -170,6 +170,14 @@
       "line": "v4",
       "targetFramework": "net452",
       "assemblyName": "AutoFixture.AutoRhinoMock"
+    },
+    {
+      "id": "tunit",
+      "name": "AutoFixture.TUnit",
+      "nugetId": "AutoFixture.TUnit",
+      "version": "0.1.0-preview0001",
+      "line": "v4",
+      "targetFramework": "net8.0"
     }
   ]
 }
