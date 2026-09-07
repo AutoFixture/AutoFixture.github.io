@@ -1,20 +1,21 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
 import type { NavigationMenuItem } from '@nuxt/ui'
+import { mapDocsNavigationBadges } from '~/utils/docsNavigationBadge'
 
 const route = useRoute()
 
 const { data: docsNavigationRaw } = await useAsyncData('docs-navigation', () =>
-  queryCollectionNavigation('docs'),
+  queryCollectionNavigation('docs', ['badge']),
 )
 
 /** Collection root ("Docs") is not useful in the sidebar — expose its children as top level. */
 const docsNavigation = computed(() => {
   const items = docsNavigationRaw.value ?? []
-  if (items.length === 1 && items[0]?.children?.length) {
-    return items[0].children
-  }
-  return items
+  const topLevel = items.length === 1 && items[0]?.children?.length
+    ? items[0].children
+    : items
+  return mapDocsNavigationBadges(topLevel)
 })
 
 provide('docsNavigation', docsNavigation)
