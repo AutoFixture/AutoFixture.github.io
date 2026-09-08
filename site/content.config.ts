@@ -17,6 +17,11 @@ export default defineContentConfig({
       },
       schema: z.object({
         description: z.string().optional(),
+        /**
+         * Last meaningful content update (calendar day).
+         * Prefer `YYYY-MM-DD` in frontmatter; YAML dates are also accepted.
+         */
+        updated: z.union([z.string(), z.date()]).optional(),
         /** Sidebar badge — string shortcut (`New`, `Updated`, `Preview`) or Nuxt UI BadgeProps. */
         badge: z.union([z.string(), z.number(), badgeObjectSchema]).optional(),
       }),

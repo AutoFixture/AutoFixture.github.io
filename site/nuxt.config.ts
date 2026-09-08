@@ -77,6 +77,13 @@ export default defineNuxtConfig({
           type: 'image/svg+xml',
           href: '/favicon.svg?v=2',
         },
+        {
+          key: 'docs-atom-feed',
+          rel: 'alternate',
+          type: 'application/atom+xml',
+          title: 'AutoFixture documentation',
+          href: '/feed.xml',
+        },
       ],
     },
   },
