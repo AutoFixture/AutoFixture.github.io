@@ -64,7 +64,8 @@ Slugs and version segments are lowercase. Package ids match the catalog (autofix
 - https://autofixture.com/api-meta/routes.json — all API HTML routes
 - https://autofixture.com/api-meta/{packageId}/{versionSegment}/toc.json — package TOC
 - https://autofixture.com/api-meta/{packageId}/{versionSegment}/search.json — searchable API snippets
-- https://autofixture.com/sitemap.xml — HTML and markdown URLs
+- https://autofixture.com/sitemap.xml — HTML and markdown URLs (`lastmod` when guides set `updated`)
+- https://autofixture.com/feed.xml — Atom feed of recently updated guides
 
 ## Optional
 

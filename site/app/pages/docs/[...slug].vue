@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { formatDocsUpdatedDate } from '~/utils/formatDocsUpdatedDate'
+
 definePageMeta({
   layout: 'docs',
 })
@@ -20,9 +22,12 @@ const { data: surround } = await useAsyncData(
   () => queryCollectionItemSurroundings('docs', docsPath.value),
 )
 
+const updated = computed(() => formatDocsUpdatedDate(page.value?.updated))
+
 usePageSeo({
   title: () => page.value?.title,
   description: () => page.value?.description,
+  modifiedTime: () => updated.value?.iso,
 })
 
 const tocLinks = computed(() => page.value?.body?.toc?.links ?? [])
@@ -33,7 +38,15 @@ const tocLinks = computed(() => page.value?.body?.toc?.links ?? [])
     <UPageHeader
       :title="page.title"
       :description="page.description"
-    />
+    >
+      <p
+        v-if="updated"
+        class="mt-3 text-sm text-muted"
+      >
+        Updated
+        <time :datetime="updated.iso">{{ updated.label }}</time>
+      </p>
+    </UPageHeader>
 
     <UPageBody>
       <ContentRenderer
